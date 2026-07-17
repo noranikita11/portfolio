@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lavender-themed cat behaviour guide with animations, icons, and calm layout.">
+  <meta name="description" content="Maroon-themed cat behaviour guide with animations, image modal, and meme section.">
   <title>Cats: Their Behaviour and What It Means</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +13,11 @@
 <body>
   <header class="hero" id="top">
     <nav class="nav container" aria-label="Primary navigation">
-      <a class="brand" href="#top">Lavender<span>Cat</span></a>
+      <a class="brand" href="#top">Maroon<span>Cat</span></a>
       <div class="nav-links">
         <a class="nav-link" href="#behaviour">Behaviours</a>
         <a class="nav-link" href="#body-language">Body language</a>
+        <a class="nav-link" href="#memes">Memes</a>
         <a class="nav-link" href="#trust">Trust</a>
       </div>
     </nav>
@@ -24,7 +25,7 @@
     <div class="hero-grid container">
       <div class="hero-copy reveal">
         <p class="eyebrow">Cat behaviour guide</p>
-        <h1>Understand your cat with<br><span>lavender calm and clarity.</span></h1>
+        <h1>Understand your cat with<br><span>maroon warmth and clarity.</span></h1>
         <p class="intro">Cats are intelligent, independent, and highly observant. This guide helps you read their body language, recognise what they mean, and build a stronger, kinder relationship.</p>
         <div class="hero-buttons">
           <a class="button button-primary" href="#behaviour">Explore behaviours</a>
@@ -39,8 +40,8 @@
 
       <div class="hero-visual reveal delay-1">
         <div class="hero-card floating">
-          <img src="cat.png" alt="Relaxed cat in lavender glow">
-          <div class="hero-label">Curious, calm, and expressive</div>
+          <img class="clickable-img" src="cat.png" alt="Relaxed maroon cat" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="image-modal">
+          <div class="hero-label">Confident, cosy, and curious</div>
         </div>
       </div>
     </div>
@@ -163,6 +164,31 @@
       </div>
     </section>
 
+    <section class="section section-meme container" id="memes">
+      <div class="section-heading reveal">
+        <p class="section-label">Cat memes</p>
+        <h2>Because every cat guide deserves a smile.</h2>
+      </div>
+
+      <div class="meme-grid">
+        <article class="meme-card reveal">
+          <img src="https://placekitten.com/900/520" alt="Funny cat meme illustration">
+          <div class="meme-copy">
+            <h3>Snack time signal</h3>
+            <p>One look at the treat bag and your cat instantly becomes a 5-star performer.</p>
+          </div>
+        </article>
+
+        <article class="meme-card reveal delay-1">
+          <img src="https://placekitten.com/900/530" alt="Playful cat meme illustration">
+          <div class="meme-copy">
+            <h3>Stealth mode</h3>
+            <p>That moment when your cat acts like a shadow but is really snack-hunting royalty.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="section container" id="trust">
       <div class="section-heading reveal">
         <p class="section-label">How to build trust with a cat</p>
@@ -213,10 +239,16 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <p>Lavender Cat Behaviour Guide</p>
-      <p>Designed for calm observation and gentle connection.</p>
+      <p>Maroon Cat Behaviour Guide</p>
+      <p>Designed for cozy connection and confident care.</p>
     </div>
   </footer>
+
+  <dialog class="image-modal" id="image-modal" aria-labelledby="image-modal-caption">
+    <button type="button" aria-label="Close full-size image">×</button>
+    <img src="cat.png" alt="Full-size cat image">
+    <p id="image-modal-caption">Cat close-up</p>
+  </dialog>
 
   <script>
     const revealObserver = new IntersectionObserver((entries) => {
@@ -226,6 +258,26 @@
     }, { threshold: 0.15 });
 
     document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+
+    const portrait = document.querySelector('.clickable-img');
+    const imageModal = document.querySelector('#image-modal');
+    const modalClose = imageModal.querySelector('button');
+
+    const openModal = () => imageModal.showModal();
+    const closeModal = () => imageModal.close();
+
+    portrait.addEventListener('click', openModal);
+    portrait.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openModal();
+      }
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    imageModal.addEventListener('click', (event) => {
+      if (event.target === imageModal) closeModal();
+    });
   </script>
 </body>
 </html>
