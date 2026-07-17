@@ -48,6 +48,13 @@
     .advocacy-card:hover img { transform: scale(1.07); }
     .advocacy-card figcaption { position: absolute; z-index: 1; bottom: 1.15rem; left: 1.15rem; color: #fff; font: 600 1.12rem/1.15 var(--serif); }
     .advocacy-card figcaption span { display: block; color: #d7bcff; font: 700 .68rem var(--sans); letter-spacing: .12em; margin-bottom: .4rem; }
+    .portrait { cursor: zoom-in; transition: transform .3s ease, box-shadow .3s ease; }
+    .portrait:hover, .portrait:focus { transform: translateX(-50%) scale(1.025); box-shadow: 0 30px 70px rgba(0, 0, 0, .65); outline: none; }
+    .image-modal { width: min(900px, calc(100% - 32px)); max-height: 90vh; padding: 0; border: 1px solid rgba(217, 190, 255, .28); border-radius: 14px; background: #100b18; color: #fff; box-shadow: 0 28px 100px rgba(0,0,0,.75); }
+    .image-modal::backdrop { background: rgba(3, 2, 8, .82); backdrop-filter: blur(5px); }
+    .image-modal img { display: block; width: 100%; max-height: 82vh; object-fit: contain; }
+    .image-modal button { position: absolute; top: .8rem; right: .8rem; width: 2.5rem; height: 2.5rem; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; background: rgba(8,5,13,.74); color: #fff; font-size: 1.35rem; cursor: pointer; }
+    .image-modal p { margin: 0; padding: .9rem 1.1rem; font-size: .85rem; color: #d7c8e9; }
     @media (max-width: 760px) { .solidarity-grid { grid-template-columns: 1fr; gap: 2.5rem; } .advocacy-card { min-height: 230px; } }
   </style>
 </head>
@@ -76,7 +83,7 @@
       <div class="hero-visual reveal delay-1">
         <div class="sun"></div>
         <div class="orb orb-one"></div><div class="orb orb-two"></div>
-        <img class="portrait" src="nora.png" alt="Nora">
+        <img class="portrait" src="nora.png" alt="Nora — click to view full size" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="image-modal">
         <div class="identity-card"><span>15</span><p>curious<br>multitasker</p></div>
         <p class="vertical-note">KEEP LOOKING UP</p>
       </div>
@@ -174,9 +181,21 @@
     </div>
     <div class="container footer-bottom"><span>© 2026 Nora</span><span>Dream · Plan · Work · Fly</span></div>
   </footer>
+  <dialog class="image-modal" id="image-modal" aria-labelledby="image-modal-caption">
+    <button type="button" aria-label="Close full-size image">×</button>
+    <img src="nora.png" alt="Nora">
+    <p id="image-modal-caption">Nora</p>
+  </dialog>
   <script>
     const observer = new IntersectionObserver((entries) => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); }), { threshold: .12 });
     document.querySelectorAll('.reveal').forEach(item => observer.observe(item));
+    const portrait = document.querySelector('.portrait');
+    const imageModal = document.querySelector('#image-modal');
+    const closeImageModal = () => imageModal.close();
+    portrait.addEventListener('click', () => imageModal.showModal());
+    portrait.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); imageModal.showModal(); } });
+    imageModal.querySelector('button').addEventListener('click', closeImageModal);
+    imageModal.addEventListener('click', (event) => { if (event.target === imageModal) closeImageModal(); });
   </script>
 </body>
 </html>
