@@ -3,199 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nora's portfolio — aspiring pilot, future innovator and feminist.">
-  <title>Nora — Aspiring Pilot & Feminist</title>
+  <meta name="description" content="Lavender-themed cat behaviour guide with animations, icons, and calm layout.">
+  <title>Cats: Their Behaviour and What It Means</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .airplane-feature { background-image: url('https://images.unsplash.com/photo-1606219411833-8abd2f112b50?auto=format&fit=crop&fm=jpg&q=85&w=2200'); }
-    :root { --ink: #f4efff; --muted: #c9bed9; --pink: #9b5cff; --deep-pink: #c7a1ff; --blush: #171020; --soft: #27163d; --cream: #09070e; --line: rgba(218, 190, 255, .2); }
-    body { background: #09070e; color: var(--ink); }
-    .hero { background: radial-gradient(circle at 76% 38%, #5b288c 0, transparent 32%), radial-gradient(circle at 18% 80%, #27134f 0, transparent 35%), linear-gradient(125deg, #07050b 0%, #110a20 48%, #250f41 100%); }
-    .brand, .nav-link, .button-text { color: #fff; }
-    .brand span, .eyebrow, .section-label, .quick-facts strong, .skill-icon, .values-list span, .timeline-card span { color: #c7a1ff; }
-    .intro, .statement > div p, .timeline-card p, .skill-card p, .values-copy > p:not(.section-label) { color: #c9bed9; }
-    .sun { background: linear-gradient(145deg, #7540bb, #25113f); }
-    .orb { background: #c7a1ff; }
-    .portrait { box-shadow: 0 25px 65px rgba(0, 0, 0, .5); filter: none; image-rendering: auto; }
-    .identity-card { background: rgba(22, 13, 37, .8); color: #fff; border: 1px solid rgba(211, 180, 255, .2); }
-    .identity-card span, h2 em, .hero h1 em { color: #bf92ff; }
-    .button-primary { background: linear-gradient(100deg, #7a3bd6, #b46cff); box-shadow: 0 13px 30px rgba(117, 52, 211, .3); }
-    .statement, .journey, .values { background: #09070e; }
-    .skills-section { background: linear-gradient(120deg, #130b22, #211038); }
-    .timeline-card { background: #100b18; }
-    .timeline-card:hover, .skill-card { background: #1c112b; }
-    .skill-card { border-color: rgba(211, 180, 255, .15); }
-    .airplane-feature { background-color: #12091e; }
-    .airplane-overlay { background: linear-gradient(90deg, rgba(6, 3, 12, .92), rgba(62, 24, 100, .48)); }
-    .focus-banner { background: linear-gradient(115deg, #150725, #51217f 56%, #8d4adb); }
-    .footer { background: #050308; border-top-color: #7c3fc6; }
-    .footer h2 em { color: #c7a1ff; }
-    .solidarity { background: linear-gradient(135deg, #100916, #221034 60%, #0b0812); border-block: 1px solid var(--line); }
-    .solidarity-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 5rem; }
-    .solidarity h2 { font: 600 clamp(2.7rem, 4vw, 4.5rem)/1 var(--serif); letter-spacing: -.04em; margin: 0; }
-    .solidarity-copy > p:not(.section-label) { color: var(--muted); max-width: 470px; margin: 1.5rem 0 0; }
-    .advocacy-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .advocacy-card { min-height: 300px; position: relative; overflow: hidden; margin: 0; border-radius: 12px; background: #1d1030; border: 1px solid rgba(217, 190, 255, .18); }
-    .advocacy-card img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; padding: 18%; transition: transform .45s ease; }
-    .feminist-card { background: radial-gradient(circle at 50% 35%, #6d3aad, #150b25 72%); }
-    .feminist-card img { filter: invert(86%) sepia(25%) saturate(977%) hue-rotate(211deg) brightness(101%) contrast(98%); }
-    .pride-card { background: #0b0810; }
-    .pride-card img { padding: 0; opacity: .86; }
-    .advocacy-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 42%, rgba(0,0,0,.78)); pointer-events: none; }
-    .advocacy-card:hover img { transform: scale(1.07); }
-    .advocacy-card figcaption { position: absolute; z-index: 1; bottom: 1.15rem; left: 1.15rem; color: #fff; font: 600 1.12rem/1.15 var(--serif); }
-    .advocacy-card figcaption span { display: block; color: #d7bcff; font: 700 .68rem var(--sans); letter-spacing: .12em; margin-bottom: .4rem; }
-    .portrait { cursor: zoom-in; transition: transform .3s ease, box-shadow .3s ease; }
-    .portrait:hover, .portrait:focus { transform: translateX(-50%) scale(1.025); box-shadow: 0 30px 70px rgba(0, 0, 0, .65); outline: none; }
-    .image-modal { width: min(900px, calc(100% - 32px)); max-height: 90vh; padding: 0; border: 1px solid rgba(217, 190, 255, .28); border-radius: 14px; background: #100b18; color: #fff; box-shadow: 0 28px 100px rgba(0,0,0,.75); }
-    .image-modal::backdrop { background: rgba(3, 2, 8, .82); backdrop-filter: blur(5px); }
-    .image-modal img { display: block; width: 100%; max-height: 82vh; object-fit: contain; image-rendering: auto; }
-    .image-modal button { position: absolute; top: .8rem; right: .8rem; width: 2.5rem; height: 2.5rem; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; background: rgba(8,5,13,.74); color: #fff; font-size: 1.35rem; cursor: pointer; }
-    .image-modal p { margin: 0; padding: .9rem 1.1rem; font-size: .85rem; color: #d7c8e9; }
-    @media (max-width: 760px) { .solidarity-grid { grid-template-columns: 1fr; gap: 2.5rem; } .advocacy-card { min-height: 230px; } }
-  </style>
 </head>
 <body>
-  <header class="hero">
+  <header class="hero" id="top">
     <nav class="nav container" aria-label="Primary navigation">
-      <a class="brand" href="#top">N<span>✦</span>RA</a>
-      <a class="nav-link" href="#contact">Let's connect <span>↗</span></a>
+      <a class="brand" href="#top">Lavender<span>Cat</span></a>
+      <div class="nav-links">
+        <a class="nav-link" href="#behaviour">Behaviours</a>
+        <a class="nav-link" href="#body-language">Body language</a>
+        <a class="nav-link" href="#trust">Trust</a>
+      </div>
     </nav>
 
-    <div class="hero-content container" id="top">
+    <div class="hero-grid container">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Aspiring pilot · Future innovator</p>
-        <h1>Dreaming <em>higher</em><br>than the sky.</h1>
-        <p class="intro">Hi, I'm Nora — a student, an aviation enthusiast, and a feminist who believes every girl deserves the freedom to dream boldly, lead confidently, and fly far.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#journey">Explore my journey <span>↓</span></a>
-          <a class="button button-text" href="#values">What I stand for <span>→</span></a>
+        <p class="eyebrow">Cat behaviour guide</p>
+        <h1>Understand your cat with<br><span>lavender calm and clarity.</span></h1>
+        <p class="intro">Cats are intelligent, independent, and highly observant. This guide helps you read their body language, recognise what they mean, and build a stronger, kinder relationship.</p>
+        <div class="hero-buttons">
+          <a class="button button-primary" href="#behaviour">Explore behaviours</a>
+          <a class="button button-secondary" href="#conclusion">Read conclusion</a>
         </div>
-        <ul class="quick-facts" aria-label="Quick facts">
-          <li><strong>01</strong> Based in Bangalore, India</li>
-          <li><strong>02</strong> 1st PUC · PCME</li>
-        </ul>
+        <div class="hero-highlights">
+          <div><span>10</span> common behaviours</div>
+          <div><span>6</span> body language cues</div>
+          <div><span>5</span> trust tips</div>
+        </div>
       </div>
 
       <div class="hero-visual reveal delay-1">
-        <div class="sun"></div>
-        <div class="orb orb-one"></div><div class="orb orb-two"></div>
-        <img class="portrait" src="nora.png" alt="Nora — click to view full size" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="image-modal">
-        <div class="identity-card"><span>15</span><p>curious<br>multitasker</p></div>
-        <p class="vertical-note">KEEP LOOKING UP</p>
+        <div class="hero-card floating">
+          <img src="cat.png" alt="Relaxed cat in lavender glow">
+          <div class="hero-label">Curious, calm, and expressive</div>
+        </div>
       </div>
     </div>
+
+    <div class="scroll-hint">Scroll to learn more <span>?</span></div>
   </header>
 
   <main>
-    <section class="statement section container reveal">
-      <p class="section-label">My mission</p>
-      <div>
-        <h2>To turn curiosity into <em>lift-off</em> — and make space for more girls to do the same.</h2>
-        <p>I’m building a life at the intersection of aviation, technology, and positive change. Every challenge is a chance to learn, grow, and move forward.</p>
-      </div>
-    </section>
-
-    <section class="airplane-feature" aria-label="Aviation">
-      <div class="airplane-overlay"></div>
-      <div class="container feature-content reveal">
-        <p class="section-label light">Aviation is my north star</p>
-        <h2>The sky isn’t the limit.<br>It’s just the beginning.</h2>
-        <p>From learning how aircraft work to preparing for DGCA exams, I’m taking one intentional step at a time toward the cockpit.</p>
-      </div>
-    </section>
-
-    <section class="journey section container" id="journey">
+    <section class="section container" id="behaviour">
       <div class="section-heading reveal">
-        <p class="section-label">The journey so far</p>
-        <h2>Growing with<br><em>purpose.</em></h2>
+        <p class="section-label">Common cat behaviours</p>
+        <h2>What cats are really trying to tell you.</h2>
       </div>
-      <div class="timeline">
-        <article class="timeline-card reveal"><span>01</span><h3>Curious beginnings</h3><p>A lifelong love for maths, flying, and questions that don't have easy answers.</p></article>
-        <article class="timeline-card reveal delay-1"><span>02</span><h3>Learning deeply</h3><p>Studying PCME and building foundations in electronics, technology, and aviation.</p></article>
-        <article class="timeline-card reveal delay-2"><span>03</span><h3>Aiming higher</h3><p>Preparing for DGCA, exploring possibilities, and turning ambition into a plan.</p></article>
+
+      <div class="grid cards-grid">
+        <article class="info-card reveal">
+          <div class="card-badge">1</div>
+          <h3>Purring</h3>
+          <p>Purring usually means a cat is happy, relaxed, and comfortable. It can also happen when they are nervous or in pain because the vibration helps calm them.</p>
+        </article>
+
+        <article class="info-card reveal delay-1">
+          <div class="card-badge">2</div>
+          <h3>Kneading</h3>
+          <p>Cats often push their paws in and out on soft surfaces like blankets or their owner�s lap. This behaviour begins in kittenhood and usually means the cat feels safe, content, and affectionate.</p>
+        </article>
+
+        <article class="info-card reveal delay-2">
+          <div class="card-badge">3</div>
+          <h3>Slow blinking</h3>
+          <p>When a cat slowly closes and opens its eyes while looking at you, it is often called a �cat kiss.� It shows trust, comfort, and affection.</p>
+        </article>
+
+        <article class="info-card reveal delay-3">
+          <div class="card-badge">4</div>
+          <h3>Rubbing against people or objects</h3>
+          <p>Cats rub their heads or bodies against people, furniture, or other animals to leave their scent. This marks something as familiar and safe while also showing affection.</p>
+        </article>
+
+        <article class="info-card reveal delay-4">
+          <div class="card-badge">5</div>
+          <h3>Tail positions</h3>
+          <ul class="feature-list">
+            <li><strong>High tail:</strong> happy, confident, friendly.</li>
+            <li><strong>Wrapped tail:</strong> affection and trust.</li>
+            <li><strong>Puffed-up tail:</strong> fear or feeling threatened.</li>
+            <li><strong>Tucked tail:</strong> anxiety or insecurity.</li>
+            <li><strong>Flicking tail:</strong> irritation, excitement, or frustration.</li>
+          </ul>
+        </article>
+
+        <article class="info-card reveal delay-5">
+          <div class="card-badge">6</div>
+          <h3>Meowing</h3>
+          <p>Adult cats mainly meow to communicate with humans. Different meows can mean asking for food, wanting attention, greeting someone, or expressing discomfort.</p>
+        </article>
+
+        <article class="info-card reveal delay-6">
+          <div class="card-badge">7</div>
+          <h3>Hissing and growling</h3>
+          <p>These sounds are warning signals. A hissing or growling cat feels frightened, threatened, or angry and wants more space.</p>
+        </article>
+
+        <article class="info-card reveal delay-7">
+          <div class="card-badge">8</div>
+          <h3>Scratching</h3>
+          <p>Scratching is a natural behaviour that helps cats keep their claws healthy, stretch their muscles, and mark territory using scent glands in their paws.</p>
+        </article>
+
+        <article class="info-card reveal delay-8">
+          <div class="card-badge">9</div>
+          <h3>Bringing �gifts�</h3>
+          <p>Some cats bring toys or prey to their owners. This behaviour may reflect natural hunting instincts or a way of sharing with people they trust.</p>
+        </article>
+
+        <article class="info-card reveal delay-9">
+          <div class="card-badge">10</div>
+          <h3>Sleeping frequently</h3>
+          <p>Cats sleep between 12 and 16 hours a day, and some sleep even longer. They conserve energy for hunting and play, making long periods of rest completely normal.</p>
+        </article>
       </div>
     </section>
 
-    <section class="skills-section section">
-      <div class="container">
-        <div class="section-heading reveal"><p class="section-label">What energises me</p><h2>Curious mind.<br><em>Steady heart.</em></h2></div>
-        <div class="skills-grid">
-          <article class="skill-card reveal"><div class="skill-icon">✈</div><h3>Aviation</h3><p>Aircraft, flight systems, navigation, and the craft of becoming a capable pilot.</p></article>
-          <article class="skill-card reveal delay-1"><div class="skill-icon">⌘</div><h3>Technology</h3><p>Electronics, computing, and the ideas that make our world more connected.</p></article>
-          <article class="skill-card reveal delay-2"><div class="skill-icon">✦</div><h3>Creative learning</h3><p>Styling, cooking, travel, and every experience that invites me to see differently.</p></article>
-        </div>
+    <section class="section section-alt container" id="body-language">
+      <div class="section-heading reveal">
+        <p class="section-label">Understanding cat body language</p>
+        <h2>Read the subtle signals in posture, eyes, and ears.</h2>
+      </div>
+
+      <div class="grid body-grid">
+        <article class="body-card reveal">
+          <div class="icon">??</div>
+          <h3>Ears forward</h3>
+          <p>Curious and interested. Your cat is alert and paying attention to what is happening.</p>
+        </article>
+
+        <article class="body-card reveal delay-1">
+          <div class="icon">??</div>
+          <h3>Flattened ears</h3>
+          <p>Fear, anger, or defensiveness. Give your cat more space and lower the intensity of interaction.</p>
+        </article>
+
+        <article class="body-card reveal delay-2">
+          <div class="icon">??</div>
+          <h3>Wide pupils</h3>
+          <p>Excitement, fear, or low light. Context matters � watch the rest of the body for the full meaning.</p>
+        </article>
+
+        <article class="body-card reveal delay-3">
+          <div class="icon">??</div>
+          <h3>Relaxed posture</h3>
+          <p>Comfortable and secure. A calm cat will move smoothly and appear loose rather than rigid.</p>
+        </article>
+
+        <article class="body-card reveal delay-4">
+          <div class="icon">??</div>
+          <h3>Arched back with raised fur</h3>
+          <p>Feeling threatened and trying to appear larger. Approach gently only if the cat chooses to come close.</p>
+        </article>
       </div>
     </section>
 
-    <section class="values section container" id="values">
-      <div class="values-copy reveal">
-        <p class="section-label">Values & beliefs</p>
-        <h2>Ambition has no <em>gender.</em></h2>
-        <p>I’m a feminist. I believe in equality, kindness, and the power of girls who are encouraged to take up space, speak up, and shape the future.</p>
-        <a class="button button-primary" href="#contact">Say hello <span>→</span></a>
+    <section class="section container" id="trust">
+      <div class="section-heading reveal">
+        <p class="section-label">How to build trust with a cat</p>
+        <h2>Small habits that create a stronger bond.</h2>
       </div>
-      <div class="values-list reveal delay-1">
-        <p><span>✦</span> Every girl can dream, achieve, and lead.</p>
-        <p><span>✦</span> Stereotypes are made to be challenged.</p>
-        <p><span>✦</span> Knowledge grows stronger when it is shared.</p>
-        <p><span>✦</span> Progress is most meaningful when it lifts others.</p>
+
+      <div class="grid trust-grid">
+        <article class="trust-card reveal">
+          <div class="icon">?</div>
+          <h3>Respect personal space</h3>
+          <p>Let your cat approach first and avoid pushing them into contact they are not ready for.</p>
+        </article>
+
+        <article class="trust-card reveal delay-1">
+          <div class="icon">???</div>
+          <h3>Allow the cat to come to you</h3>
+          <p>Offer a calm presence, and let them decide when they want pets, play, or quiet time.</p>
+        </article>
+
+        <article class="trust-card reveal delay-2">
+          <div class="icon">??</div>
+          <h3>Use gentle movements</h3>
+          <p>Speak softly, move slowly, and avoid sudden loud noises or fast hands.</p>
+        </article>
+
+        <article class="trust-card reveal delay-3">
+          <div class="icon">??</div>
+          <h3>Provide regular playtime</h3>
+          <p>Interactive toys and daily play help cats stay happy, relaxed, and engaged.</p>
+        </article>
+
+        <article class="trust-card reveal delay-4">
+          <div class="icon">???</div>
+          <h3>Offer food, water, and comfort</h3>
+          <p>Fresh water, nutritious food, and a warm resting space make cats feel safe and cared for.</p>
+        </article>
       </div>
     </section>
 
-    <section class="solidarity section" id="solidarity">
-      <div class="container solidarity-grid">
-        <div class="solidarity-copy reveal">
-          <p class="section-label">Solidarity in action</p>
-          <h2>Equality looks like <em>everyone</em> belonging.</h2>
-          <p>I stand for gender equality and LGBTQ+ dignity, safety, and freedom. A fairer future is one where every person can be seen, respected, and celebrated for who they are.</p>
-        </div>
-        <div class="advocacy-gallery reveal delay-1" aria-label="Feminism and LGBTQ+ solidarity">
-          <figure class="advocacy-card feminist-card">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Feminism_symbol.svg" alt="Feminist symbol">
-            <figcaption><span>01</span>Feminism<br>&amp; equal futures</figcaption>
-          </figure>
-          <figure class="advocacy-card pride-card">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rainbow_flag.svg" alt="Rainbow Pride flag">
-            <figcaption><span>02</span>Pride, love<br>&amp; belonging</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="focus section container">
-      <div class="focus-banner reveal">
-        <p class="section-label">Right now</p><h2>Discipline today.<br><em>Freedom tomorrow.</em></h2>
-        <div class="focus-pills"><span>PUC studies</span><span>DGCA preparation</span><span>Fitness</span><span>Electronics</span></div>
+    <section class="section section-conclusion container" id="conclusion">
+      <div class="conclusion-card reveal">
+        <h2>Conclusion</h2>
+        <p>Cats communicate in many subtle ways through body language, sounds, and daily habits. By learning what these behaviours mean, owners can better understand their pets, respond to their needs, and develop a stronger, healthier relationship built on trust.</p>
+        <p class="conclusion-note">Understand your cat, respect their nature, and enjoy a lifetime of friendship.</p>
       </div>
     </section>
   </main>
 
-  <footer class="footer" id="contact">
+  <footer class="footer">
     <div class="container footer-inner">
-      <div><p class="section-label">Let's connect</p><h2>Keep in <em>touch.</em></h2></div>
-      <div class="contact-links"><a href="mailto:noranikita3@gmail.com">noranikita3@gmail.com <span>↗</span></a><a href="https://github.com/noranikita11" target="_blank" rel="noreferrer">GitHub <span>↗</span></a><a href="https://www.instagram.com/norasebastian_/" target="_blank" rel="noreferrer">Instagram <span>↗</span></a></div>
+      <p>Lavender Cat Behaviour Guide</p>
+      <p>Designed for calm observation and gentle connection.</p>
     </div>
-    <div class="container footer-bottom"><span>© 2026 Nora</span><span>Dream · Plan · Work · Fly</span></div>
   </footer>
-  <dialog class="image-modal" id="image-modal" aria-labelledby="image-modal-caption">
-    <button type="button" aria-label="Close full-size image">×</button>
-    <img src="nora.png" alt="Nora">
-    <p id="image-modal-caption">Nora</p>
-  </dialog>
+
   <script>
-    const observer = new IntersectionObserver((entries) => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); }), { threshold: .12 });
-    document.querySelectorAll('.reveal').forEach(item => observer.observe(item));
-    const portrait = document.querySelector('.portrait');
-    const imageModal = document.querySelector('#image-modal');
-    const closeImageModal = () => imageModal.close();
-    portrait.addEventListener('click', () => imageModal.showModal());
-    portrait.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); imageModal.showModal(); } });
-    imageModal.querySelector('button').addEventListener('click', closeImageModal);
-    imageModal.addEventListener('click', (event) => { if (event.target === imageModal) closeImageModal(); });
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
   </script>
 </body>
 </html>
