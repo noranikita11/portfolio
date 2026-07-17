@@ -11,6 +11,44 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     .airplane-feature { background-image: url('https://images.unsplash.com/photo-1606219411833-8abd2f112b50?auto=format&fit=crop&fm=jpg&q=85&w=2200'); }
+    :root { --ink: #f4efff; --muted: #c9bed9; --pink: #9b5cff; --deep-pink: #c7a1ff; --blush: #171020; --soft: #27163d; --cream: #09070e; --line: rgba(218, 190, 255, .2); }
+    body { background: #09070e; color: var(--ink); }
+    .hero { background: radial-gradient(circle at 76% 38%, #5b288c 0, transparent 32%), radial-gradient(circle at 18% 80%, #27134f 0, transparent 35%), linear-gradient(125deg, #07050b 0%, #110a20 48%, #250f41 100%); }
+    .brand, .nav-link, .button-text { color: #fff; }
+    .brand span, .eyebrow, .section-label, .quick-facts strong, .skill-icon, .values-list span, .timeline-card span { color: #c7a1ff; }
+    .intro, .statement > div p, .timeline-card p, .skill-card p, .values-copy > p:not(.section-label) { color: #c9bed9; }
+    .sun { background: linear-gradient(145deg, #7540bb, #25113f); }
+    .orb { background: #c7a1ff; }
+    .portrait { box-shadow: 0 25px 65px rgba(0, 0, 0, .5); filter: saturate(.8) contrast(1.08); }
+    .identity-card { background: rgba(22, 13, 37, .8); color: #fff; border: 1px solid rgba(211, 180, 255, .2); }
+    .identity-card span, h2 em, .hero h1 em { color: #bf92ff; }
+    .button-primary { background: linear-gradient(100deg, #7a3bd6, #b46cff); box-shadow: 0 13px 30px rgba(117, 52, 211, .3); }
+    .statement, .journey, .values { background: #09070e; }
+    .skills-section { background: linear-gradient(120deg, #130b22, #211038); }
+    .timeline-card { background: #100b18; }
+    .timeline-card:hover, .skill-card { background: #1c112b; }
+    .skill-card { border-color: rgba(211, 180, 255, .15); }
+    .airplane-feature { background-color: #12091e; }
+    .airplane-overlay { background: linear-gradient(90deg, rgba(6, 3, 12, .92), rgba(62, 24, 100, .48)); }
+    .focus-banner { background: linear-gradient(115deg, #150725, #51217f 56%, #8d4adb); }
+    .footer { background: #050308; border-top-color: #7c3fc6; }
+    .footer h2 em { color: #c7a1ff; }
+    .solidarity { background: linear-gradient(135deg, #100916, #221034 60%, #0b0812); border-block: 1px solid var(--line); }
+    .solidarity-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 5rem; }
+    .solidarity h2 { font: 600 clamp(2.7rem, 4vw, 4.5rem)/1 var(--serif); letter-spacing: -.04em; margin: 0; }
+    .solidarity-copy > p:not(.section-label) { color: var(--muted); max-width: 470px; margin: 1.5rem 0 0; }
+    .advocacy-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .advocacy-card { min-height: 300px; position: relative; overflow: hidden; margin: 0; border-radius: 12px; background: #1d1030; border: 1px solid rgba(217, 190, 255, .18); }
+    .advocacy-card img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; padding: 18%; transition: transform .45s ease; }
+    .feminist-card { background: radial-gradient(circle at 50% 35%, #6d3aad, #150b25 72%); }
+    .feminist-card img { filter: invert(86%) sepia(25%) saturate(977%) hue-rotate(211deg) brightness(101%) contrast(98%); }
+    .pride-card { background: #0b0810; }
+    .pride-card img { padding: 0; opacity: .86; }
+    .advocacy-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 42%, rgba(0,0,0,.78)); pointer-events: none; }
+    .advocacy-card:hover img { transform: scale(1.07); }
+    .advocacy-card figcaption { position: absolute; z-index: 1; bottom: 1.15rem; left: 1.15rem; color: #fff; font: 600 1.12rem/1.15 var(--serif); }
+    .advocacy-card figcaption span { display: block; color: #d7bcff; font: 700 .68rem var(--sans); letter-spacing: .12em; margin-bottom: .4rem; }
+    @media (max-width: 760px) { .solidarity-grid { grid-template-columns: 1fr; gap: 2.5rem; } .advocacy-card { min-height: 230px; } }
   </style>
 </head>
 <body>
@@ -98,6 +136,26 @@
         <p><span>✦</span> Stereotypes are made to be challenged.</p>
         <p><span>✦</span> Knowledge grows stronger when it is shared.</p>
         <p><span>✦</span> Progress is most meaningful when it lifts others.</p>
+      </div>
+    </section>
+
+    <section class="solidarity section" id="solidarity">
+      <div class="container solidarity-grid">
+        <div class="solidarity-copy reveal">
+          <p class="section-label">Solidarity in action</p>
+          <h2>Equality looks like <em>everyone</em> belonging.</h2>
+          <p>I stand for gender equality and LGBTQ+ dignity, safety, and freedom. A fairer future is one where every person can be seen, respected, and celebrated for who they are.</p>
+        </div>
+        <div class="advocacy-gallery reveal delay-1" aria-label="Feminism and LGBTQ+ solidarity">
+          <figure class="advocacy-card feminist-card">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Feminism_symbol.svg" alt="Feminist symbol">
+            <figcaption><span>01</span>Feminism<br>&amp; equal futures</figcaption>
+          </figure>
+          <figure class="advocacy-card pride-card">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rainbow_flag.svg" alt="Rainbow Pride flag">
+            <figcaption><span>02</span>Pride, love<br>&amp; belonging</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
