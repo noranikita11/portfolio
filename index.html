@@ -19,7 +19,7 @@
     .intro, .statement > div p, .timeline-card p, .skill-card p, .values-copy > p:not(.section-label) { color: #c9bed9; }
     .sun { background: linear-gradient(145deg, #7540bb, #25113f); }
     .orb { background: #c7a1ff; }
-    .portrait { box-shadow: 0 25px 65px rgba(0, 0, 0, .5); filter: saturate(.8) contrast(1.08); }
+    .portrait { box-shadow: 0 25px 65px rgba(0, 0, 0, .5); filter: none; image-rendering: auto; }
     .identity-card { background: rgba(22, 13, 37, .8); color: #fff; border: 1px solid rgba(211, 180, 255, .2); }
     .identity-card span, h2 em, .hero h1 em { color: #bf92ff; }
     .button-primary { background: linear-gradient(100deg, #7a3bd6, #b46cff); box-shadow: 0 13px 30px rgba(117, 52, 211, .3); }
@@ -52,7 +52,7 @@
     .portrait:hover, .portrait:focus { transform: translateX(-50%) scale(1.025); box-shadow: 0 30px 70px rgba(0, 0, 0, .65); outline: none; }
     .image-modal { width: min(900px, calc(100% - 32px)); max-height: 90vh; padding: 0; border: 1px solid rgba(217, 190, 255, .28); border-radius: 14px; background: #100b18; color: #fff; box-shadow: 0 28px 100px rgba(0,0,0,.75); }
     .image-modal::backdrop { background: rgba(3, 2, 8, .82); backdrop-filter: blur(5px); }
-    .image-modal img { display: block; width: 100%; max-height: 82vh; object-fit: contain; }
+    .image-modal img { display: block; width: 100%; max-height: 82vh; object-fit: contain; image-rendering: auto; }
     .image-modal button { position: absolute; top: .8rem; right: .8rem; width: 2.5rem; height: 2.5rem; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; background: rgba(8,5,13,.74); color: #fff; font-size: 1.35rem; cursor: pointer; }
     .image-modal p { margin: 0; padding: .9rem 1.1rem; font-size: .85rem; color: #d7c8e9; }
     @media (max-width: 760px) { .solidarity-grid { grid-template-columns: 1fr; gap: 2.5rem; } .advocacy-card { min-height: 230px; } }
